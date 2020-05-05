@@ -20,6 +20,10 @@ inputs:
     description: pattern of the test script name
     required: true
     default: 'test_*.py'
+  python_path:
+    description: PYTHONPATH
+    required: true
+    default: '.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -28,3 +32,4 @@ runs:
     - ${{ inputs.deps_list }}
     - ${{ inputs.test_dir }}
     - ${{ inputs.pattern }}
+    - ${{ inputs.python_path }}
